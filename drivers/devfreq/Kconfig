@@ -122,6 +122,7 @@ config ARM_MEMLAT_MON
 	  This driver uses these counters to implement the APIs needed by
 	  the mem_latency devfreq governor.
 
+ don't compile exynos drivers
 config QCOMCCI_HWMON
 	tristate "QCOM CCI Cache monitor hardware"
 	depends on ARCH_QCOM
