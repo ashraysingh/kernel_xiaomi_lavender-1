@@ -29,22 +29,6 @@
 #include <drm/drmP.h>
 #include <drm/drm_atomic.h>
 #include <drm/drm_plane_helper.h>
-#include <drm/drm_mode.h>
-#include <drm/drm_print.h>
-#include <linux/devfreq_boost.h>
-#include <linux/pm_qos.h>
-#include <linux/sync_file.h>
-
-#include "drm_crtc_internal.h"
-
-void __drm_crtc_commit_free(struct kref *kref)
-{
-	struct drm_crtc_commit *commit =
-		container_of(kref, struct drm_crtc_commit, ref);
-
-	kfree(commit);
-}
-EXPORT_SYMBOL(__drm_crtc_commit_free);
 
 /**
  * drm_atomic_state_default_release -
