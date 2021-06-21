@@ -31,6 +31,7 @@ function push() {
         -F "parse_mode=html" \
         -F caption="Build took $(($DIFF / 60)) minute(s) and $(($DIFF % 60)) second(s). | For <b>Xiaomi Redmi Note 7/7s (lavender)</b> | <b>$KBUILD_COMPILER_STRING</b>"
     rm *.zip *.gz-dtb
+    cd ..
 }
 # Fin Error
 function finerr() {
