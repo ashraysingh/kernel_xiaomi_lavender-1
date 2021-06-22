@@ -1,18 +1,31 @@
-version: 2.1
+version: 2.0
+
 jobs:
-  compile:
-   docker:
+  info:
+    docker:
       - image: z4nyx/docker:latest
-   steps:
-      - run:
-          command: |
-           git config --global user.name "ehtesham01"
-           git config --global user.email "ehteshammalik4@gmail.com"
-           git config --global color.ui false
-           git clone --depth=1 https://github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME} -b ${CIRCLE_BRANCH} .
-           bash .circleci/build.sh
+    steps:
+      - run: git clone --depth=1 https://github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME} -b ${CIRCLE_BRANCH} .
+      - run: bash .circleci/info
+
+  oldcam:
+    docker:
+      - image: z4nyx/docker:latest
+    steps:
+      - run: git clone --depth=1 https://github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME} -b ${CIRCLE_BRANCH} .
+      - run: bash .circleci/oldcam
+
+  newcam:
+    docker:
+      - image: z4nyx/docker:latest
+    steps:
+      - run: git clone --depth=1 https://github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME} -b ${CIRCLE_BRANCH} .
+      - run: bash .circleci/newcam
+
 workflows:
-  version: 2.1
-  cooking:
+  version: 2
+  build:
     jobs:
-      - compile
+      - info
+      - oldcam
+      - newcam
