@@ -29,7 +29,7 @@
 		status = "okay";
 		pm660_s5: regulator-s5 {
 			regulator-min-microvolt = <1224000>;
-			regulator-max-microvolt = <1350000>;
+			regulator-max-microvolt = <1300000>;
 			status = "okay";
 		};
 	};
@@ -38,7 +38,7 @@
 		status = "okay";
 		pm660_s6: regulator-s6 {
 			regulator-min-microvolt = <504000>;
-			regulator-max-microvolt = <992000>;
+			regulator-max-microvolt = <800000>;
 			status = "okay";
 		};
 	};
@@ -46,8 +46,8 @@
 	rpm-regulator-smpb1 {
 		status = "okay";
 		pm660l_s1: regulator-s1 {
-			regulator-min-microvolt = <1125000>;
-			regulator-max-microvolt = <1125000>;
+			regulator-min-microvolt = <1025000>;
+			regulator-max-microvolt = <1025000>;
 			status = "okay";
 		};
 	};
@@ -55,8 +55,8 @@
 	rpm-regulator-smpb2 {
 		status = "okay";
 		pm660l_s2: regulator-s2 {
-			regulator-min-microvolt = <1050000>;
-			regulator-max-microvolt = <1050000>;
+			regulator-min-microvolt = <1010000>;
+			regulator-max-microvolt = <1010000>;
 			status = "okay";
 		};
 	};
@@ -510,7 +510,7 @@
 		compatible = "qcom,stub-regulator";
 		regulator-name = "gfx_stub_corner";
 		regulator-min-microvolt = <400000>;
-		regulator-max-microvolt = <1070000>;
+		regulator-max-microvolt = <1010000>;
 	};
 };
 
@@ -535,7 +535,7 @@
 		reg-names = "ldo_addr";
 		regulator-name = "msm_gfx_ldo";
 		regulator-min-microvolt = <400000>;
-		regulator-max-microvolt = <925000>;
+		regulator-max-microvolt = <865000>;
 	};
 
 /* CPR controller regulators */
@@ -585,12 +585,12 @@
 
 				qcom,cpr-corner-fmax-map = <1 2 3 4 5 6>;
 
-				qcom,cpr-voltage-ceiling =
-					<535000  595000  675000  740000
-					 820000  875000 1020000>;
+        qcom,cpr-voltage-ceiling =
+					<525000  585000  665000  730000
+					 810000  865000 1010000>;
 				qcom,cpr-voltage-floor =
-					<454000  454000  546000  602000
-					 662000  694000 1020000>;
+					<444000  444000  444000  444000
+					 444000  444000 444000>;
 
 				qcom,mem-acc-voltage = <1 1 1 2 2 2 2>;
 				qcom,system-voltage =
@@ -674,7 +674,7 @@
 		qcom,apm-threshold-voltage = <872000>;
 		qcom,apm-crossover-voltage = <872000>;
 		qcom,apm-hysteresis-voltage = <20000>;
-		qcom,voltage-step = <4000>;
+		qcom,voltage-step = <5000>;
 		qcom,voltage-base = <400000>;
 		qcom,cpr-saw-use-unit-mV;
 		qcom,cpr-reset-step-quot-loop-en;
@@ -736,12 +736,12 @@
 					<2 3 4 5 8>;
 
 				qcom,cpr-voltage-ceiling =
-					< 644000  644000  644000  708000  788000
-					 988000 988000 988000>;
+					< 624000  624000  624000  688000  768000
+					 968000 968000 968000>;
 
 				qcom,cpr-voltage-floor =
-					<508000  508000  516000  572000  632000
-					 664000  704000  764000>;
+					<488000  488000  488000  488000  488000
+					 488000  488000  488000>;
 
 				qcom,corner-frequencies =
 					/* Speed bin 0 */
@@ -825,7 +825,7 @@
 		qcom,apm-threshold-voltage = <872000>;
 		qcom,apm-crossover-voltage = <872000>;
 		qcom,apm-hysteresis-voltage = <20000>;
-		qcom,voltage-step = <4000>;
+		qcom,voltage-step = <5000>;
 		qcom,voltage-base = <400000>;
 		qcom,cpr-saw-use-unit-mV;
 		qcom,cpr-reset-step-quot-loop-en;
@@ -887,12 +887,12 @@
 					<2 3 4 6 7>;
 
 				qcom,cpr-voltage-ceiling =
-					<644000  644000  708000  788000
-					 908000  908000 988000>;
+					<624000  624000  688000  768000
+					 888000  888000 968000>;
 
 				qcom,cpr-voltage-floor =
-					<508000  516000  572000  632000
-					 664000  704000  762000>;
+					<488000  496000  496000  496000
+					 496000  496000  496000>;
 
 				qcom,corner-frequencies =
 					/* Speed bin 0 */
