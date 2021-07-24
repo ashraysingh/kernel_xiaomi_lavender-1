@@ -1,0 +1,14 @@
+kind: pipeline
+name : bEast
+steps:
+ - name: SDM660
+   image: xyzuan/xdocker:latest
+   environment:
+     token:
+       from_secret: token
+     chat_id:
+       from_secret: chat_id
+   commands:
+     - git clone --depth=1 https://github.com/ashraysingh/kernel_xiaomi_lavender-1.git bEast
+     - cd bEast
+     - bash .circleci/build.sh
